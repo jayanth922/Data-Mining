@@ -1,1 +1,1 @@
-
+In this task, i used github copilot ai pair programmer to create a markdown previewer application which takes markdown code as input and gives the output as formatted text, ie, html tags. I also provided a video of how i used it
