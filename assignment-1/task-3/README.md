@@ -1,1 +1,1 @@
-
+This assignment is about using any automl platform (akkio in this case) and demonstrating a end to end ml project. The dataset i took is Google play store apps from kaggle. I uploaded the dataset and only with prompts i was able to clean the dataset, perform exploratory data analysis, predict a column by training a model and deploying it on a endpoint. All this was done automatically with no code. I dropped a video demo of how it was done
