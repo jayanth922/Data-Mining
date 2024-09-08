@@ -1,1 +1,1 @@
-
+This task deals with the python tutorial of derek banas and implementing advanced colab features. Learning basic python and using features like capturing photo, starting elastic search server, python and js calls.
