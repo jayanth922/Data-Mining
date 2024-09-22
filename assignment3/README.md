@@ -1,5 +1,5 @@
 This task is about solving classification, regression, clustering, anomaly detection, association rule mining and time series forecasting problems using low code
-ml library called pycaret. I have shared the colab notebooks for all these tasks. 
+Auto ML library called pycaret. I have shared the colab notebooks for all these tasks. 
 
 
 I also implemented gradio on these notebooks. It is a python library which is used for creating an interface and api for our model so that we can access it from a browser.
