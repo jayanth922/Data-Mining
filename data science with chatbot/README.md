@@ -1,11 +1,15 @@
-**Water Quality Prediction: A Data Science Project Using CRISP-DM**
+                                **Water Quality Prediction: A Data Science Project Using CRISP-DM**
 
 
 Project Overview:
 This project aims to use chatgpt to create a data science project (water quality prediction) using CRISP-DM Methodology.
 
+
+
 Objective:
 The primary goal of this project is to create a predictive model that determines if water is suitable for consumption. This involves analyzing different chemical and physical characteristics of water and using machine learning to classify each sample as potable (1) or not potable (0).
+
+
 
 CRISP-DM Methodology:
 The project follows the CRISP-DM (Cross-Industry Standard Process for Data Mining) methodology, which includes:
@@ -18,6 +22,8 @@ Evaluation: Assessing model performance using accuracy, precision, recall, and F
 Deployment: Preparing the model for real-world use through testing and evaluation.
 
 
+
+
 Dataset Description:
 The dataset contains 3276 water samples, each with a set of features that represent different quality metrics:
 
@@ -26,6 +32,8 @@ Hardness: Represents the concentration of calcium and magnesium.
 Total Dissolved Solids (TDS): Indicates the amount of dissolved minerals.
 Chloramines, Sulfate, Conductivity, Organic Carbon, Trihalomethanes, and Turbidity are other features that help determine water quality.
 The target variable is Potability, which indicates whether the water is suitable for drinking.
+
+
 
 Key Phases of the Project:
 1. Data Cleaning and Preprocessing
