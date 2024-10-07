@@ -1,4 +1,4 @@
-                                                                  **Water Quality Prediction: A Data Science Project Using CRISP-DM**
+**Water Quality Prediction: A Data Science Project Using CRISP-DM**
 
 
 Project Overview:
