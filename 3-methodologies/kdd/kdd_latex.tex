@@ -1,0 +1,332 @@
+documentclass{article}
+usepackage{graphicx}
+usepackage{amsmath}
+usepackage{listings}
+usepackage{xcolor}
+usepackage{hyperref}
+
+title{Wine Quality Prediction Using KDD Methodology}
+author{Jayanth Kalyanam  San Jose State University  texttt{jayanth.kalyanam@sjsu.edu}}
+date{today}
+
+definecolor{codeblue}{rgb}{0.0, 0.0, 0.5}
+
+lstset{
+  backgroundcolor=color{white},
+  basicstyle=ttfamilysmall,
+  breaklines=true,
+  keywordstyle=color{codeblue},
+  commentstyle=color{gray},
+  stringstyle=color{red},
+  frame=single,
+  numbers=left,
+  numberstyle=tinycolor{gray},
+  stepnumber=1,
+  numbersep=8pt,
+  tabsize=2,
+  showspaces=false,
+  showstringspaces=false
+}
+
+begin{document}
+
+maketitle
+
+begin{abstract}
+This paper presents a machine learning approach to predicting the quality of red wines using the KDD (Knowledge Discovery in Databases) methodology. The dataset consists of 1,599 red wine samples, each described by 11 features. Several models were trained, including Logistic Regression, K-Nearest Neighbors, Decision Tree, Random Forest, Support Vector Machine, and Gradient Boosting. The Random Forest model, after optimization, achieved an accuracy of 81%, with the most important features being density_diff, sulphates, and alcohol content. This paper also includes the code used to implement each phase of the project along with the relevant visualizations, such as the ROC curve, confusion matrix, and feature importance plot.
+end{abstract}
+
+section{Introduction}
+Wine quality is traditionally evaluated through sensory analysis by experts, which can be subjective and costly. In this project, we apply machine learning techniques to predict wine quality based on physicochemical properties. The project follows the KDD (Knowledge Discovery in Databases) methodology to ensure a structured approach, from data selection to knowledge representation. Our goal is to build an accurate model for predicting wine quality and provide insights into the chemical properties that most influence wine quality.
+
+section{KDD Methodology}
+The Knowledge Discovery in Databases (KDD) methodology consists of the following phases
+begin{itemize}
+    item textbf{Data Selection} Identifying and selecting the relevant dataset.
+    item textbf{Data Preprocessing} Cleaning, handling missing values, and scaling the data.
+    item textbf{Data Transformation} Creating new features or modifying existing features to enhance predictive power.
+    item textbf{Data Mining} Applying machine learning algorithms to build predictive models.
+    item textbf{Pattern Evaluation} Evaluating model performance through metrics and visualizations.
+    item textbf{Knowledge Representation} Interpreting results and providing insights based on the model’s performance.
+end{itemize}
+
+section{Phase 1 Data Selection}
+The dataset used in this study is the Red Wine Quality dataset from the UCI Machine Learning Repository. It contains 1,599 samples, each described by 11 physicochemical features, and the target variable is the wine quality score.
+
+textbf{Features}
+begin{itemize}
+    item Fixed Acidity
+    item Volatile Acidity
+    item Citric Acid
+    item Residual Sugar
+    item Chlorides
+    item Free Sulfur Dioxide
+    item Total Sulfur Dioxide
+    item Density
+    item pH
+    item Sulphates
+    item Alcohol
+end{itemize}
+
+textbf{Data Selection Code}
+
+begin{lstlisting}[language=Python,caption=Loading the Dataset]
+import pandas as pd
+
+# Load the Wine Quality dataset
+url = 'httpsarchive.ics.uci.edumlmachine-learning-databaseswine-qualitywinequality-red.csv'
+data = pd.read_csv(url, sep=';')
+
+# Display the first five rows
+data.head()
+
+# Check the shape of the dataset
+print(fDataset shape {data.shape})
+end{lstlisting}
+
+The target variable, wine quality, was converted into a binary classification task
+begin{itemize}
+    item textbf{Good Quality} Quality score $geq 6$
+    item textbf{Bad Quality} Quality score $ 6$
+end{itemize}
+
+section{Phase 2 Data Preprocessing}
+The dataset was preprocessed by handling missing values, scaling features, and creating a new feature called textit{density_diff} to enhance the predictive power.
+
+subsection{Handling Missing Values}
+The dataset had no missing values, so no imputation was necessary.
+
+subsection{Scaling and Feature Engineering}
+All features were scaled using the RobustScaler to account for the presence of outliers. Additionally, we created the following new feature
+[
+density_diff = density - left( frac{alcohol}{100} right)
+]
+
+textbf{Data Preprocessing Code}
+
+begin{lstlisting}[language=Python,caption=Data Preprocessing and Feature Engineering]
+from sklearn.preprocessing import RobustScaler
+
+# Initialize the scaler
+scaler = RobustScaler()
+
+# Separate features and target variable
+X = data.drop('quality', axis=1)
+y = data['quality']
+
+# Fit and transform the features
+X_scaled = scaler.fit_transform(X)
+
+# Binarize the target variable
+y_binary = y.apply(lambda x 1 if x = 6 else 0)
+
+# Create a new feature 'density_diff'
+data['density_diff'] = data['density'] - data['alcohol']  0.01
+
+# Update features and apply scaling
+X = data.drop('quality', axis=1)
+X_scaled = scaler.fit_transform(X)
+
+# Split into training and testing sets
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(
+    X_scaled, y_binary, test_size=0.2, random_state=42, stratify=y_binary
+)
+end{lstlisting}
+
+section{Phase 3 Data Transformation}
+In this phase, we ensured that the data was ready for machine learning by scaling all features and transforming the target variable into a binary classification task. No further transformations were applied beyond feature engineering and scaling.
+
+section{Phase 4 Data Mining}
+In the data mining phase, we trained several machine learning models on the processed data to predict wine quality. The models used were
+begin{itemize}
+    item Logistic Regression
+    item K-Nearest Neighbors
+    item Decision Tree
+    item Random Forest
+    item Support Vector Machine
+    item Gradient Boosting
+end{itemize}
+
+textbf{Code for Model Training}
+
+begin{lstlisting}[language=Python,caption=Training Multiple Models]
+from sklearn.linear_model import LogisticRegression
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
+from sklearn.svm import SVC
+
+# Define models
+models = {
+    'Logistic Regression' LogisticRegression(max_iter=1000, random_state=42),
+    'K-Nearest Neighbors' KNeighborsClassifier(),
+    'Decision Tree' DecisionTreeClassifier(random_state=42),
+    'Random Forest' RandomForestClassifier(random_state=42),
+    'Support Vector Machine' SVC(probability=True, random_state=42),
+    'Gradient Boosting' GradientBoostingClassifier(random_state=42)
+}
+
+# Function to evaluate models
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score
+
+def evaluate_model(model, X_train, y_train, X_test, y_test)
+    model.fit(X_train, y_train)
+    y_pred = model.predict(X_test)
+    y_proba = model.predict_proba(X_test)[, 1] if hasattr(model, predict_proba) else None
+
+    accuracy = accuracy_score(y_test, y_pred)
+    precision = precision_score(y_test, y_pred)
+    recall = recall_score(y_test, y_pred)
+    f1 = f1_score(y_test, y_pred)
+    roc_auc = roc_auc_score(y_test, y_proba) if y_proba is not None else 'NA'
+
+    return {
+        'Accuracy' accuracy,
+        'Precision' precision,
+        'Recall' recall,
+        'F1 Score' f1,
+        'ROC AUC' roc_auc
+    }
+
+# Evaluate each model
+results = {}
+for model_name, model in models.items()
+    metrics = evaluate_model(model, X_train, y_train, X_test, y_test)
+    results[model_name] = metrics
+
+# Display the results
+import pandas as pd
+results_df = pd.DataFrame(results).T
+print(results_df)
+end{lstlisting}
+
+The Random Forest model performed the best and was further optimized using GridSearchCV.
+
+section{Phase 5 Pattern Evaluation}
+The optimized Random Forest model was evaluated using several performance metrics on the test set, achieving the following results
+begin{itemize}
+    item Accuracy 81%
+    item Precision 83% (Good Quality), 78% (Bad Quality)
+    item Recall 80% (Good Quality), 82% (Bad Quality)
+    item F1 Score 81% (Good Quality), 80% (Bad Quality)
+    item ROC AUC Score 0.90
+end{itemize}
+
+textbf{Code for Evaluation Metrics and Confusion Matrix}
+
+begin{lstlisting}[language=Python,caption=Evaluation Metrics and Confusion Matrix]
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, classification_report
+
+# Predict on the test set using the optimized Random Forest
+y_pred = best_rf.predict(X_test)
+
+# Confusion matrix
+cm = confusion_matrix(y_test, y_pred)
+disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=['Bad Quality', 'Good Quality'])
+disp.plot(cmap='Blues')
+plt.title('Confusion Matrix for Random Forest Model')
+plt.show()
+
+# Classification report
+report = classification_report(y_test, y_pred, target_names=['Bad Quality', 'Good Quality'])
+print(report)
+end{lstlisting}
+
+textbf{ROC Curve Code}
+begin{lstlisting}[language=Python,caption=ROC Curve for Optimized Random Forest Model]
+from sklearn.metrics import roc_curve, auc
+
+# Compute ROC curve and ROC area
+y_scores = best_rf.predict_proba(X_test)[, 1]
+fpr, tpr, thresholds = roc_curve(y_test, y_scores)
+roc_auc = auc(fpr, tpr)
+
+# Plot ROC curve
+import matplotlib.pyplot as plt
+plt.figure()
+plt.plot(fpr, tpr, color='darkorange', lw=2, label=f'ROC curve (area = {roc_auc.2f})')
+plt.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--')
+plt.xlim([0.0, 1.0])
+plt.ylim([0.0, 1.05])
+plt.xlabel('False Positive Rate')
+plt.ylabel('True Positive Rate')
+plt.title('Receiver Operating Characteristic (ROC) Curve')
+plt.legend(loc=lower right)
+plt.show()
+end{lstlisting}
+
+The ROC curve for the Random Forest model, with an AUC score of 0.90, is shown below
+
+begin{figure}[h]
+    centering
+    includegraphics[width=0.7textwidth]{roc_curve.png}  % Include the ROC curve plot here
+    caption{ROC Curve for Random Forest Model with AUC = 0.90}
+    label{figroc}
+end{figure}
+
+subsection{Feature Importance}
+The most important features in the Random Forest model were
+
+textbf{Feature Importance Code}
+
+begin{lstlisting}[language=Python,caption=Feature Importance Plot]
+# Retrieve feature importances
+importances = best_rf.feature_importances_
+feature_names = data.drop('quality', axis=1).columns
+
+# Create a DataFrame for feature importances
+feature_importance_df = pd.DataFrame({
+    'Feature' feature_names,
+    'Importance' importances
+}).sort_values(by='Importance', ascending=False)
+
+# Plot Feature Importances
+import seaborn as sns
+plt.figure(figsize=(10, 6))
+sns.barplot(x='Importance', y='Feature', data=feature_importance_df)
+plt.title('Feature Importances from Optimized Random Forest')
+plt.show()
+end{lstlisting}
+
+The Feature Importance Plot is shown below
+
+begin{figure}[h]
+    centering
+    includegraphics[width=0.7textwidth]{feature_importance.png}  % Include the feature importance plot here
+    caption{Feature Importance Plot for Random Forest Model}
+    label{figimportance}
+end{figure}
+
+section{Phase 6 Knowledge Representation}
+Based on the classification metrics and visualizations, we derived several key insights
+
+textbf{Classification Report}
+begin{itemize}
+    item Accuracy The model achieved an accuracy of 81%, indicating that it correctly classified the wine quality for most samples.
+    item Precision The precision for Good Quality wines was 83%, meaning that 83% of the wines predicted as good were actually good.
+    item Recall The recall for Bad Quality wines was 82%, meaning that 82% of the actual bad quality wines were correctly identified.
+    item F1-Score Balanced F1-scores of 0.80 and 0.81 for bad and good quality wines, respectively, indicate the model handles both classes effectively.
+end{itemize}
+
+textbf{Top Features}
+begin{itemize}
+    item Density_diff was the most important feature, highlighting the influence of both density and alcohol content on wine quality.
+    item Sulphates played a significant role in determining wine preservation and quality.
+    item Alcohol content had a strong correlation with wine quality, with higher alcohol levels generally linked to higher quality.
+end{itemize}
+
+textbf{ROC Curve} The AUC score of 0.90 shows that the Random Forest model has a strong ability to distinguish between good and bad quality wines across different thresholds.
+
+section{Conclusion}
+Using the KDD methodology, we successfully built a machine learning model to predict wine quality with an accuracy of 81% and an AUC score of 0.90. The most influential features were identified as density_diff, sulphates, and alcohol content. These insights can help winemakers optimize the quality of their products by focusing on these key factors.
+
+
+section{References}
+
+begin{itemize}
+    item Cortez, P., Cerdeira, A., Almeida, F., Matos, T., & Reis, J. (2009). Modeling wine preferences by data mining from physicochemical properties. textit{Decision Support Systems}, 47(4), 547-553. url{httpsdoi.org10.1016j.dss.2009.05.016}.
+    item Breiman, L. (2001). Random forests. textit{Machine Learning}, 45(1), 5-32. url{httpsdoi.org10.1023A1010933404324}.
+end{itemize}
+
+end{document}
