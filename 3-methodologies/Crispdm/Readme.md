@@ -50,4 +50,4 @@ This project follows the CRISP-DM methodology:
 
 Here is the colab notebook link : https://colab.research.google.com/drive/1H3WSNbC6sTh5bvAm39DZXZFX7421DbgN?usp=sharing
 
-Here is the link to the medium article : https://medium.com/@jayanth.kalyanam/predicting-wine-quality-using-machine-learning-a-hands-on-guide-681476bbe2ca
+Here is the link to the medium article : https://medium.com/@jayanth.kalyanam/predicting-airbnb-prices-in-nyc-a-hands-on-data-science-project-28843256dc36
