@@ -7,11 +7,7 @@ This project uses the **CRISP-DM** (Cross Industry Standard Process for Data Min
 - [CRISP-DM Methodology](#crisp-dm-methodology)
 - [Dataset](#dataset)
 - [Technologies and Libraries Used](#technologies-and-libraries-used)
-- [Project Structure](#project-structure)
-- [Running the Project](#running-the-project)
-- [Model Deployment](#model-deployment)
-- [Results](#results)
-- [References](#references)
+
 
 ## Project Overview
 
@@ -51,5 +47,7 @@ This project follows the CRISP-DM methodology:
 - **Joblib** for model serialization
 - **Jupyter Notebook** / **Colab** for exploratory analysis
 
-## Project Structure
 
+Here is the colab notebook link : https://colab.research.google.com/drive/1H3WSNbC6sTh5bvAm39DZXZFX7421DbgN?usp=sharing
+
+Here is the link to the medium article : https://medium.com/@jayanth.kalyanam/predicting-wine-quality-using-machine-learning-a-hands-on-guide-681476bbe2ca
