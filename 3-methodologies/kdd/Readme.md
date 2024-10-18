@@ -14,3 +14,8 @@ We utilize the **KDD Methodology**, which includes:
 4. **Data Mining**: Training machine learning models to predict wine quality.
 5. **Pattern Evaluation**: Evaluating the performance of the models using various metrics.
 6. **Knowledge Representation**: Interpreting and visualizing results.
+
+
+Here is the colab notebook link : https://colab.research.google.com/drive/1oSgc9SIGXlbYRi3V7gYBN5_McF3ZJfBs?usp=sharing
+
+Here is the link to medium article : https://medium.com/@jayanth.kalyanam/predicting-wine-quality-using-machine-learning-a-hands-on-guide-681476bbe2ca
