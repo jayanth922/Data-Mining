@@ -4,14 +4,8 @@ This repository contains the project code for predicting customer churn using th
 
 ## Table of Contents
 - [Overview](#overview)
-- [Project Structure](#project-structure)
 - [Dataset](#dataset)
 - [Methodology](#methodology)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Results](#results)
-- [Visualizations](#visualizations)
-- [References](#references)
 
 ## Overview
 Customer churn prediction is an essential task for subscription-based businesses. By predicting whether a customer is likely to leave, companies can take proactive steps to retain them. In this project, we apply the SEMMA methodology to systematically analyze and build models that can accurately predict customer churn.
@@ -31,3 +25,10 @@ This project follows the **SEMMA methodology**, which is broken down into the fo
 3. **Modify**: We handled missing data, encoded categorical variables using one-hot encoding, and scaled numerical features.
 4. **Model**: Several machine learning models were trained and evaluated, including Logistic Regression, Random Forest, SVM, and XGBoost.
 5. **Assess**: We evaluated models using accuracy, cross-validation scores, and confusion matrices to identify the best-performing model.
+
+
+
+
+Here is the colab notebook link : https://colab.research.google.com/drive/1aeGbGrL_ttNzOpeJTj82ffn35pvRZKdu?usp=sharing
+
+Here is the medium article : https://medium.com/@jayanth.kalyanam/a-hands-on-guide-to-data-science-with-semma-methodology-predicting-customer-churn-f2677ce28fdd
