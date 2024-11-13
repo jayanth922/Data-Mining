@@ -2,7 +2,6 @@
 
 This project focuses on analyzing and predicting Airbnb listing prices in New York City using a tabular dataset. The analysis includes **exploratory data analysis (EDA)**, **feature engineering**, **clustering**, **anomaly detection**, and **automated machine learning (AutoML)** with **Auto_ViML**.
 
----
 
 ## Project Structure
 
@@ -32,4 +31,4 @@ This project focuses on analyzing and predicting Airbnb listing prices in New Yo
 ### 7. **Predictive Modeling with AutoML (Auto_ViML)**
    - Use Auto_ViML to automate model building for predicting Airbnb prices, including feature selection and hyperparameter tuning.
 
----
+Here is the link to youtube : https://youtu.be/NYrwIz87C_k
