@@ -32,3 +32,4 @@ This project focuses on analyzing and predicting Airbnb listing prices in New Yo
    - Use Auto_ViML to automate model building for predicting Airbnb prices, including feature selection and hyperparameter tuning.
 
 Here is the link to youtube : https://youtu.be/NYrwIz87C_k
+Here is the link to colab : https://colab.research.google.com/drive/1tAM_0nyQOrrp8LaRqJqDCp7AoM-f_qTi?usp=sharing
