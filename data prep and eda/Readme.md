@@ -1,0 +1,1 @@
+This task is about taking 2 datasets from kaggle (tabular and time series) and performing Data Exploration, Manual and Auto EDA, Data Preprocessing, Feature Engineering, Clustering and Anomaly detection and model building using AutoViML, a framework that is used to automate model building and feature selection
