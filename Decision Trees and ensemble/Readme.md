@@ -4,7 +4,7 @@ This repository contains a collection of Jupyter Notebooks that implement and de
 
 ---
 
-## Table of Contents
+## Table of Content
 
 1. [GBM from Scratch](#gbm-from-scratch)
 Youtube Demo : https://youtu.be/9LSNIjAIjrU
