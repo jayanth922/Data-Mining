@@ -6,7 +6,7 @@ This repository contains a collection of Jupyter Notebooks that implement and de
 
 ## Table of Contents
 
-1. [GBM from Scratch](#gbm-from-scratch)  Youtube Demo : https://youtu.be/9LSNIjAIjrU      Colab Link : https://colab.research.google.com/drive/1leOf9XE0jKwtfqYZrC3fVQNDL6Io8AqF?usp=sharing
+1. [GBM from Scratch](#gbm-from-scratch)  Youtube Demo : https://youtu.be/9LSNIjAIjrU  Colab Link : https://colab.research.google.com/drive/1leOf9XE0jKwtfqYZrC3fVQNDL6Io8AqF?usp=sharing
 2. [Random Forest from Scratch](#random-forest-from-scratch) Youtube Demo : https://youtu.be/AnNobt6wvQQ  Colab Link : https://colab.research.google.com/drive/18wHlOFpHCADcoJgO-tFRGtqJ_47Nm-Yv?usp=sharing
 3. [AdaBoost from Scratch](#adaboost-from-scratch) Youtube Demo : https://youtu.be/KvTylGBjQSs  Colab Link : https://colab.research.google.com/drive/19UticaGAOQZqmbDf-XRUNCv-k2DGzMzh?usp=sharing
 4. [Decision Tree from Scratch](#decision-tree-from-scratch) Youtube Demo : https://youtu.be/RZe4i0bZ7cE  Colab Link : https://colab.research.google.com/drive/1r-Va20vuA3vad4ooALp8FfigrEds-Mls?usp=sharing
