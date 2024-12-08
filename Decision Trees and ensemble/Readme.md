@@ -7,36 +7,33 @@ This repository contains a collection of Jupyter Notebooks that implement and de
 ## Table of Contents
 
 1. [GBM from Scratch](#gbm-from-scratch)
-2. Youtube Demo : https://youtu.be/9LSNIjAIjrU
-3. Colab Link : https://colab.research.google.com/drive/1leOf9XE0jKwtfqYZrC3fVQNDL6Io8AqF?usp=sharing
-4. 
-5. [Random Forest from Scratch](#random-forest-from-scratch)
-6. Youtube Demo : https://youtu.be/AnNobt6wvQQ
-7. Colab Link : https://colab.research.google.com/drive/18wHlOFpHCADcoJgO-tFRGtqJ_47Nm-Yv?usp=sharing
-8. 
-9. [AdaBoost from Scratch](#adaboost-from-scratch)
-10. Youtube Demo : https://youtu.be/KvTylGBjQSs
-11. Colab Link : https://colab.research.google.com/drive/19UticaGAOQZqmbDf-XRUNCv-k2DGzMzh?usp=sharing
+Youtube Demo : https://youtu.be/9LSNIjAIjrU
+Colab Link : https://colab.research.google.com/drive/1leOf9XE0jKwtfqYZrC3fVQNDL6Io8AqF?usp=sharing
 
-12. 
-13. [Decision Tree from Scratch](#decision-tree-from-scratch)
-14. Youtube Demo : https://youtu.be/RZe4i0bZ7cE
-15. Colab Link : https://colab.research.google.com/drive/1r-Va20vuA3vad4ooALp8FfigrEds-Mls?usp=sharing
+2. [Random Forest from Scratch](#random-forest-from-scratch)
+Youtube Demo : https://youtu.be/AnNobt6wvQQ
+Colab Link : https://colab.research.google.com/drive/18wHlOFpHCADcoJgO-tFRGtqJ_47Nm-Yv?usp=sharing
 
-16. 
-17. [GBM Classifiers Demonstration](#gbm-classifiers-demonstration)
-18. Youtube Demo : https://youtu.be/iS2AZXuxzzk
-19. Colab Link : https://colab.research.google.com/drive/17Et-3qwkyCMC9OxfjXAvEeW79UvRoyE8?usp=sharing
+3. [AdaBoost from Scratch](#adaboost-from-scratch)
+Youtube Demo : https://youtu.be/KvTylGBjQSs
+Colab Link : https://colab.research.google.com/drive/19UticaGAOQZqmbDf-XRUNCv-k2DGzMzh?usp=sharing
 
-20. 
-21. [GBM Regression Demonstration](#gbm-regression-demonstration)
-22. Youtube Demo : https://youtu.be/QBBC8jFnEm0
-23. Colab Link : https://colab.research.google.com/drive/1z7Kdbr2_TkXFEuAoJebZMpCFX0obvj1J?usp=sharing
+4. [Decision Tree from Scratch](#decision-tree-from-scratch)
+Youtube Demo : https://youtu.be/RZe4i0bZ7cE
+Colab Link : https://colab.research.google.com/drive/1r-Va20vuA3vad4ooALp8FfigrEds-Mls?usp=sharing
 
-24. 
-25. [GBM Ranking Demonstration](#gbm-ranking-demonstration)
-26. Youtube Demo : https://youtu.be/FiMZ1jDZmuI
-27. Colab Link : https://colab.research.google.com/drive/1eCJghjEFk83UdNgIj7Z2QAzFPw3m08yz?usp=sharing
+5. [GBM Classifiers Demonstration](#gbm-classifiers-demonstration)
+Youtube Demo : https://youtu.be/iS2AZXuxzzk
+Colab Link : https://colab.research.google.com/drive/17Et-3qwkyCMC9OxfjXAvEeW79UvRoyE8?usp=sharing
+
+
+6. [GBM Regression Demonstration](#gbm-regression-demonstration)
+Youtube Demo : https://youtu.be/QBBC8jFnEm0
+Colab Link : https://colab.research.google.com/drive/1z7Kdbr2_TkXFEuAoJebZMpCFX0obvj1J?usp=sharing
+
+7. [GBM Ranking Demonstration](#gbm-ranking-demonstration)
+Youtube Demo : https://youtu.be/FiMZ1jDZmuI
+Colab Link : https://colab.research.google.com/drive/1eCJghjEFk83UdNgIj7Z2QAzFPw3m08yz?usp=sharing
 
 ---
 
