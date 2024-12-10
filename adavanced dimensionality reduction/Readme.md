@@ -22,6 +22,10 @@ The goal was to evaluate the methods in terms of visualization, structure preser
 1. **Fashion MNIST (Image Data)**: A subset of grayscale images representing fashion items.
 2. **California Housing (Tabular Data)**: A dataset used for Task 2 in Databricks.
 
+
+# Link for Colab Notebook : https://colab.research.google.com/drive/1Qhm7C6taDGxxbpI7HBtch87EPsgr50Wn?usp=sharing
+# Link for Youtube Demo : https://youtu.be/Wfn3ZXeimRo
+
 ## Results and Observations
 ### Task 1 (Colab)
 - **Best Techniques**: t-SNE and UMAP excelled in clustering and visualizing non-linear relationships.
